@@ -19,8 +19,8 @@ def display_word(word_status):
 def main():
     with open('towns.csv', 'r') as towns_file:
         words = [row[0] for row in csv.reader(towns_file)]
-    difficulty = input('Difficulty (H. M. L)?')
-    difficulty = ('L' if difficulty.upper() not in ['H', 'M', 'L']
+    difficulty = input('Difficulty (H. M. L)? ').upper()
+    difficulty = ('L' if difficulty not in ['H', 'M', 'L']
                   else difficulty)
     quiz_word_unparsed = words[randint(0, WORDS_TO_USE[difficulty])]
     word = ''.join([c.upper() for c in quiz_word_unparsed
