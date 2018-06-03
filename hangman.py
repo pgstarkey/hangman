@@ -33,12 +33,12 @@ def main():
     while tries < 9:
         guess = input('Guess a letter or the %s: ' % CATEGORY).upper()
         if not all(g in ascii_uppercase for g in guess):
-            input('That\'s not a valid letter, please try again')
+            print('That\'s not a valid letter, please try again')
             continue
         if len(guess) == 1:
             if guess in word:
                 if guess in guesses:
-                    input('You\'ve already tried that, please try again')
+                    print('You\'ve already tried that, please try again')
                     continue
                 else:
                     print('Good one!')
